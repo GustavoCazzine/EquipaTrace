@@ -6,7 +6,7 @@ public class Ferramenta extends Equipamento implements ManutencaoInterface {
     public Ferramenta(){
     }
 
-    public Ferramenta(String id, String nome, String marca, String localizacao, double voltagem) {
+    public Ferramenta(String id, String nome, String marca, Localizacao localizacao, double voltagem) {
         super(id, nome, marca, localizacao);
         this.voltagem = voltagem;
     }

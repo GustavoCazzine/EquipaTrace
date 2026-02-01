@@ -1,6 +1,7 @@
 package app.service;
 
 import app.model.Equipamento;
+import app.model.Localizacao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +23,7 @@ public class AlmoxarifadoService {
                 .forEach(System.out::println);
     }
 
-    public void transferir(String id, String novaLocalizacao){
-        if (!novaLocalizacao.equalsIgnoreCase("Piracicaba") && !novaLocalizacao.equalsIgnoreCase("Campo Largo")){
-            System.out.println("Erro: Localização invãlida! Apenas Piracicaba ou Campo largo são permitidos.");
-            return;
-        }
+    public void transferir(String id, Localizacao novaLocalizacao){
         listaDeEquipamentos.stream()
                 .filter(e -> e.getId().equals(id))
                 .findFirst()

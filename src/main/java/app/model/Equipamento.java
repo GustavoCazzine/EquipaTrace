@@ -20,12 +20,12 @@ public abstract class Equipamento {
     private String id;
     private String nome;
     private String marca;
-    private String localizacao;
+    private Localizacao localizacao;
 
     public Equipamento() {
     }
 
-    public Equipamento(String id, String nome, String marca, String localizacao) {
+    public Equipamento(String id, String nome, String marca, Localizacao localizacao) {
         this.id = id;
         this.nome = nome;
         this.marca = marca;
@@ -56,11 +56,11 @@ public abstract class Equipamento {
         this.marca = marca;
     }
 
-    public String getLocalizacao() {
+    public Localizacao getLocalizacao() {
         return localizacao;
     }
 
-    public void setLocalizacao(String localizacao) {
+    public void setLocalizacao(Localizacao localizacao) {
         this.localizacao = localizacao;
     }
 

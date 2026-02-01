@@ -2,6 +2,7 @@ package app;
 
 import app.model.Ferramenta;
 import app.model.Laptop;
+import app.model.Localizacao;
 import app.service.AlmoxarifadoService;
 import app.service.PersistenciaService;
 
@@ -31,8 +32,18 @@ public class Main {
                     System.out.print("Marca: ");
                     String marca = scanner.nextLine();
 
-                    System.out.print("Localização (Piracicaba/Campo Largo): ");
-                    String local = scanner.nextLine();
+                    System.out.println("Selecione a Localização: (1) Piracicaba | (2) Campo Largo");
+                    int locEscolha = Integer.parseInt(scanner.nextLine());
+
+                    Localizacao localizacaoSelecionada = null;
+                    if (locEscolha == 1) {
+                        localizacaoSelecionada = Localizacao.PIRACICABA;
+                    } else if (locEscolha == 2) {
+                        localizacaoSelecionada = Localizacao.CAMPO_LARGO;
+                    } else {
+                        System.out.println("Opção inválida! Usando Piracicaba como padrão.");
+                        localizacaoSelecionada = Localizacao.PIRACICABA; // Fail-safe
+                    }
 
                     // AQUI OCORRE A BIFURCAÇÃO
                     System.out.println("Qual o tipo? (1) Laptop | (2) Ferramenta");
@@ -44,7 +55,7 @@ public class Main {
                         String proc = scanner.nextLine();
 
                         // Uso o CONSTRUTOR CHEIO do Laptop
-                        Laptop novoNote = new Laptop(id, nome, marca, local, proc);
+                        Laptop novoNote = new Laptop(id, nome, marca, localizacaoSelecionada, proc);
                         service.adicionar(novoNote);
 
                     } else if (tipoEscolha == 2) {
@@ -53,7 +64,7 @@ public class Main {
                         double volt = Double.parseDouble(scanner.nextLine());
 
                         // Uso o CONSTRUTOR CHEIO da Ferramenta
-                        Ferramenta novaFerr = new Ferramenta(id, nome, marca, local, volt);
+                        Ferramenta novaFerr = new Ferramenta(id, nome, marca, localizacaoSelecionada, volt);
                         service.adicionar(novaFerr);
 
                     } else {
@@ -67,8 +78,18 @@ public class Main {
                     System.out.println("ID: ");
                     String idItem = scanner.nextLine();
 
-                    System.out.println("Nova localização: ");
-                    String novaLoc = scanner.nextLine();
+                    System.out.println("Selecione a Localização: (1) Piracicaba | (2) Campo Largo");
+                    int locUser = Integer.parseInt(scanner.nextLine());
+
+                    Localizacao novaLoc = null;
+                    if (locUser == 1) {
+                        novaLoc = Localizacao.PIRACICABA;
+                    } else if (locUser == 2) {
+                        novaLoc = Localizacao.CAMPO_LARGO;
+                    } else {
+                        System.out.println("Opção inválida! Usando Piracicaba como padrão.");
+                        novaLoc = Localizacao.PIRACICABA; // Fail-safe
+                    }
 
                     service.transferir(idItem, novaLoc);
                     break;
