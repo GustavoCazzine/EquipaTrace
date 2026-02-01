@@ -41,4 +41,8 @@ public class AlmoxarifadoService {
     public void salvarDados(){
         persistencia.salvarDados(listaDeEquipamentos);
     }
+
+    public List<Equipamento> lerDados(){
+        return persistencia.carregarDados();
+    }
 }

@@ -6,6 +6,11 @@ public class Laptop extends Equipamento implements ManutencaoInterface {
     public Laptop() {
     }
 
+    public Laptop(String id, String nome, String marca, String localizacao, String processador) {
+        super(id, nome, marca, localizacao);
+        this.processador = processador;
+    }
+
     public String getProcessador() {
         return processador;
     }

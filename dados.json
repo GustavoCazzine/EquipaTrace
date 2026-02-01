@@ -12,4 +12,18 @@
   "marca" : "Dell",
   "localizacao" : "Campo Largo",
   "processador" : "Intel Core i9=10850K 3.6Ghz"
+}, {
+  "tipo" : "Laptop",
+  "id" : "3",
+  "nome" : "Laptop",
+  "marca" : "HP",
+  "localizacao" : "Campo Largo",
+  "processador" : "Razer 5x"
+}, {
+  "tipo" : "Ferramenta",
+  "id" : "4",
+  "nome" : "4",
+  "marca" : "Mancer",
+  "localizacao" : "Piracicaba",
+  "voltagem" : 5.4
 } ]

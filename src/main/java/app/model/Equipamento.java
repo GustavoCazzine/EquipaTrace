@@ -25,6 +25,13 @@ public abstract class Equipamento {
     public Equipamento() {
     }
 
+    public Equipamento(String id, String nome, String marca, String localizacao) {
+        this.id = id;
+        this.nome = nome;
+        this.marca = marca;
+        this.localizacao = localizacao;
+    }
+
     public String getId() {
         return id;
     }
