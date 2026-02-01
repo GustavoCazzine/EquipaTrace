@@ -1,17 +1,15 @@
 package app;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import app.model.Ferramenta;
+import app.model.Laptop;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+public class Main {
+    public static void main(String[] args) {
+        Ferramenta e1 = new Ferramenta("1", "Furadeira", "Makita", "Piracicaba", 13.2);
+        Laptop e2 = new Laptop("2", "Laptop", "Dell", "Campo Largo", "Intel Core i9=10850K 3.6Ghz");
+
+        System.out.println(e1.obterDetalhes());
+        System.out.println(e2.obterDetalhes());
+
     }
-}
+    }
