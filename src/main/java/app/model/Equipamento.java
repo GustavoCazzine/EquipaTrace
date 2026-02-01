@@ -4,6 +4,9 @@ package app.model;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 // 1. Diz que vamos usar um campo extra para diferenciar as classes
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
@@ -21,6 +24,8 @@ public abstract class Equipamento {
     private String nome;
     private String marca;
     private Localizacao localizacao;
+    private LocalDateTime dataEntrada;
+    private LocalDateTime ultimaMovimentacao;
 
     public Equipamento() {
     }
@@ -30,6 +35,24 @@ public abstract class Equipamento {
         this.nome = nome;
         this.marca = marca;
         this.localizacao = localizacao;
+        this.dataEntrada = LocalDateTime.now();
+        this.ultimaMovimentacao = LocalDateTime.now();
+    }
+
+    public LocalDateTime getUltimaMovimentacao() {
+        return ultimaMovimentacao;
+    }
+
+    public void setUltimaMovimentacao(LocalDateTime ultimaMovimentacao) {
+        this.ultimaMovimentacao = ultimaMovimentacao;
+    }
+
+    public LocalDateTime getDataEntrada() {
+        return dataEntrada;
+    }
+
+    public void setDataEntrada(LocalDateTime dataEntrada) {
+        this.dataEntrada = dataEntrada;
     }
 
     public String getId() {
@@ -70,6 +93,9 @@ public abstract class Equipamento {
                 "id='" + id + '\'' +
                 ", nome='" + nome + '\'' +
                 ", marca='" + marca + '\'' +
-                ", localizacao='" + localizacao + '\'';
+                ", localizacao=" + localizacao +
+                ", dataEntrada=" + dataEntrada +
+                ", ultimaMovimentacao=" + ultimaMovimentacao +
+                '}';
     }
 }

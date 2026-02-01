@@ -4,6 +4,7 @@ import app.model.Equipamento;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +15,8 @@ public class PersistenciaService {
     private ObjectMapper mapper = new ObjectMapper();
 
     public PersistenciaService(){
+        mapper.registerModule(new JavaTimeModule()); // Registra o módulo de datas
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS); // Para salvar como "2026-02-01" e não números loucos
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
     }
 

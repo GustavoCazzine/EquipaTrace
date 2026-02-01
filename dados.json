@@ -1,0 +1,19 @@
+[ {
+  "tipo" : "Ferramenta",
+  "id" : "1",
+  "nome" : "Furadeira",
+  "marca" : "Makita",
+  "localizacao" : "CAMPO_LARGO",
+  "dataEntrada" : "2026-02-01T17:52:53.9013735",
+  "ultimaMovimentacao" : "2026-02-01T17:53:31.4020012",
+  "voltagem" : 13.2
+}, {
+  "tipo" : "Ferramenta",
+  "id" : "2",
+  "nome" : "Serra de marmore",
+  "marca" : "Makita",
+  "localizacao" : "PIRACICABA",
+  "dataEntrada" : "2026-02-01T17:53:12.1360459",
+  "ultimaMovimentacao" : "2026-02-01T17:53:56.8392069",
+  "voltagem" : 25.4
+} ]

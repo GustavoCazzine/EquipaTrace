@@ -3,6 +3,7 @@ package app.service;
 import app.model.Equipamento;
 import app.model.Localizacao;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,7 @@ public class AlmoxarifadoService {
                 .findFirst()
                 .ifPresentOrElse(e -> {
                     e.setLocalizacao(novaLocalizacao);
+                    e.setUltimaMovimentacao(LocalDateTime.now());
                     System.out.println("Transferência realizada com sucesso para " + novaLocalizacao);
                 },
                     () -> System.out.println("Erro: Equipamento com ID " + id + " não encontrado.")
