@@ -1,6 +1,6 @@
 package app.model;
 
-abstract class Equipamento {
+public abstract class Equipamento {
     private String id;
     private String nome;
     private String marca;
