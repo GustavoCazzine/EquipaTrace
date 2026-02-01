@@ -1,6 +1,7 @@
 package app.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -20,11 +21,15 @@ import java.time.format.DateTimeFormatter;
 })
 
 public abstract class Equipamento {
+
+
     private String id;
     private String nome;
     private String marca;
     private Localizacao localizacao;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataEntrada;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime ultimaMovimentacao;
 
     public Equipamento() {
