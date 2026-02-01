@@ -3,9 +3,7 @@ package app.model;
 public class Ferramenta extends Equipamento implements ManutencaoInterface {
     private double voltagem;
 
-    public Ferramenta(String id, String nome, String marca, String localizacao, double voltagem){
-        super(id, nome, marca, localizacao);
-        this.voltagem = voltagem;
+    public Ferramenta(){
     }
 
     public double getVoltagem() {

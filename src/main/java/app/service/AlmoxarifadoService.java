@@ -6,7 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AlmoxarifadoService {
+    PersistenciaService persistencia = new PersistenciaService();
     private List<Equipamento> listaDeEquipamentos = new ArrayList<>();
+
+    public AlmoxarifadoService() {
+        this.listaDeEquipamentos = persistencia.carregarDados();
+    }
 
     public void adicionar(Equipamento e){
         listaDeEquipamentos.add(e);
@@ -31,5 +36,9 @@ public class AlmoxarifadoService {
                 },
                     () -> System.out.println("Erro: Equipamento com ID " + id + " não encontrado.")
                 );
+    }
+
+    public void salvarDados(){
+        persistencia.salvarDados(listaDeEquipamentos);
     }
 }

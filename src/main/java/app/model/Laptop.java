@@ -3,9 +3,7 @@ package app.model;
 public class Laptop extends Equipamento implements ManutencaoInterface {
     private String processador;
 
-    public Laptop(String id, String nome, String marca, String localizacao, String processador) {
-        super(id, nome, marca, localizacao);
-        this.processador = processador;
+    public Laptop() {
     }
 
     public String getProcessador() {

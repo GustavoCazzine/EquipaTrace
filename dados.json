@@ -1,0 +1,15 @@
+[ {
+  "tipo" : "Ferramenta",
+  "id" : "1",
+  "nome" : "Furadeira",
+  "marca" : "Makita",
+  "localizacao" : "Piracicaba",
+  "voltagem" : 13.2
+}, {
+  "tipo" : "Laptop",
+  "id" : "2",
+  "nome" : "Laptop",
+  "marca" : "Dell",
+  "localizacao" : "Campo Largo",
+  "processador" : "Intel Core i9=10850K 3.6Ghz"
+} ]

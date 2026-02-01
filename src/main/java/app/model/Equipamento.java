@@ -1,16 +1,28 @@
 package app.model;
 
+
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+// 1. Diz que vamos usar um campo extra para diferenciar as classes
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "tipo" // Esse campo vai aparecer no JSON!
+)
+// 2. Mapeia os valores desse campo para as classes Java
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Ferramenta.class, name = "Ferramenta"),
+        @JsonSubTypes.Type(value = Laptop.class, name = "Laptop")
+})
+
 public abstract class Equipamento {
     private String id;
     private String nome;
     private String marca;
     private String localizacao;
 
-    public Equipamento(String id, String nome, String marca, String localizacao) {
-        this.id = id;
-        this.nome = nome;
-        this.marca = marca;
-        this.localizacao = localizacao;
+    public Equipamento() {
     }
 
     public String getId() {
